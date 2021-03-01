@@ -1,0 +1,38 @@
+[
+  {
+    "numeroBastidor": "000000000",
+    "matricula": "0000AAA",
+    "marca": "VOLVO",
+    "modelo": "V8",
+    "tipo" : "1" 
+  },
+    {
+    "numeroBastidor": "111111111",
+    "matricula": "1111AAA",
+    "marca": "SCANIA",
+    "modelo": "KIVARA",
+    "tipo": "4" 
+  },
+    {
+    "numeroBastidor": "222222222" ,
+    "matricula": "2222AAA",
+    "marca": "AUSTIN",
+    "modelo": "LOADSTAR",
+    "tipo": "9"
+  },
+    {
+    "numeroBastidor": "333333333",
+    "matricula": "3333AAA",
+    "marca": "DAF",
+    "modelo": "XF",
+    "tipo": "6"
+  },
+    {
+    "numeroBastidor": "444444444",
+    "matricula": "4444AAA",
+    "marca": "GMC",
+    "modelo": "Topkick",
+    "tipo": "4"
+  }
+  
+ ]

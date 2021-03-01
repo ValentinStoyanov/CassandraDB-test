@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+<h1>CassandraDB insercion de datos</h1>
+
+<p>Insertar todos los datos</p>
+
+
+<button onclick="i_all()">Iniciar</button> <br />
+
+<p>Insertar por collection</p>
+
+<button onclick="i_camion()">Camion</button>
+<button onclick="i_carga()">Carga</button>
+<button onclick="i_conductor()">Conductor</button>
+<button onclick="i_coordenada()">Coordenada</button>
+<button onclick="i_origendestino()">OrigenDestino</button>
+<button onclick="i_propietario()">Propietario</button>
+<button onclick="i_remolque()">Remolque</button>
+<button onclick="i_viaje()">Viaje</button> <br />
+
+<p>Borrar todo</p>
+
+<button onclick="borrado()">Borrar todo</button>
+
+<p>Borrar por collection</p>
+
+<button onclick="b_camion()">Camion</button>
+<button onclick="b_carga()">Carga</button>
+<button onclick="b_conductor()">Conductor</button>
+<button onclick="b_coordenada()">Coordenada</button>
+<button onclick="b_origendestino()">OrigenDestino</button>
+<button onclick="b_propietario()">Propietario</button>
+<button onclick="b_remolque()">Remolque</button>
+<button onclick="b_viaje()">Viaje</button> <br />
+
+
+
+</html>
+
+<script>
+
+
+function i_all(){
+	
+	
+	
+	i_camion()
+	i_carga()
+	i_conductor()
+	i_coordenada()
+	i_origendestino()
+	i_propietario()
+	i_remolque()
+	i_viaje()
+	
+	
+	
+
+}
+
+
+function i_camion() {
+	   
+	var ajaxTime= new Date().getTime();
+	
+	fetch("camion1.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/camion/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+				console.log(response)
+			  console.log("Time to insert camion.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+function i_carga() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("carga1.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/carga/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert carga.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+function i_conductor() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("conductor1.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/conductor/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert conductor.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_coordenada() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("coordenada1.json")
+	.then(response => response.json())
+	.then(result => {
+	  
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/coordenada/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert coordenada.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_origendestino() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("origendestino1.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/origendestino/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert origendestino.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_propietario() {
+	var ajaxTime= new Date().getTime();
+	fetch("propietario1.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/propietario/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert propietario.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_remolque() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("remolque1.json")
+	.then(response => response.json())
+	.then(result => {
+	  
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/remolque/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert remolque.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_viaje() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("viaje1.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/viaje/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert viaje.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function b_viaje() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/viaje/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+function b_remolque() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/remolque/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+function b_propietario() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/propietario/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+function b_origendestino() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/origendestino/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+function b_coordenada() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/coordenada/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+
+function b_conductor() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/conductor/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+
+function b_carga() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/carga/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+
+function b_camion() {
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/camion/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+}
+
+
+function borrado(){
+	
+	alert("borrando")
+	
+	$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/camion/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+		$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/carga/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+		$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/conductor/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+		$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/coordenada/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+		$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/origendestino/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+		$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/propietario/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+		$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/remolque/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+		$.ajax({
+	    type:"POST", 
+	    url:"http://localhost:8080/viaje/deleteAll", 
+	    success:function(datos){ 
+	         console.log(datos.promedio)
+	     },
+	})
+	
+}
+</script>

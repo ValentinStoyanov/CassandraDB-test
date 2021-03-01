@@ -1,0 +1,32 @@
+[
+  {
+    "dni": "000000000A",
+    "nombre": "VALENTIN",
+    "apellidos": "STOYANOV",
+    "permisoConducir": "EFG"
+  },
+    {
+    "dni": "111111111B",
+    "nombre": "ANAKIN",
+    "apellidos": "CLAY",
+    "permisoConducir": "E"
+  },
+    {
+    "dni":"222222222C" ,
+    "nombre": "CARL",
+    "apellidos": "LOPEZ",
+    "permisoConducir": "E+"
+  },
+    {
+    "dni": "333333333D",
+    "nombre": "SUE",
+    "apellidos": "PACHECO",
+    "permisoConducir": "ACE"
+  },
+    {
+    "dni": "444444444E",
+    "nombre": "RONALD",
+    "apellidos": "LEE",
+    "permisoConducir": "EF"
+  }
+  ]

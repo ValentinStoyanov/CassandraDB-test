@@ -1,0 +1,23 @@
+[
+  {
+    "dni": "123456789A",
+    "nombreFiscal": "CojaliSL",
+    "nombreComercial": "CojaliSL",
+    "nombrePropietario": "CojaliSL",
+    "telefono": "622622622"
+  },
+    {
+    "dni": "789456123A",
+    "nombreFiscal": "FabricacionesSL",
+    "nombreComercial": "FabricacionesSL",
+    "nombrePropietario": "FabricacionesSL",
+    "telefono": "611611611"
+  },
+    {
+    "dni": "987654321A",
+    "nombreFiscal": "ComputerSL",
+    "nombreComercial": "ComputerSL",
+    "nombrePropietario": "ComputerSL",
+    "telefono": "600600600"
+  }
+  ]

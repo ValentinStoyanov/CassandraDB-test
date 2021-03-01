@@ -1,0 +1,44 @@
+[
+  {
+    "idPropietario": "123456789A",
+    "direccion": "2103  Valley Drive",
+    "ciudad": "TALAVERA",
+    "provincia": "TOLEDO",
+    "idCoordenadas": "13.595"
+  },
+    {
+    "idPropietario": "789456123A",
+    "direccion": "455  Haul Road",
+    "ciudad": "CIUDAD REAL",
+    "provincia": "CIUDAD REAL",
+    "idCoordenadas": "56.228"
+  },
+    {
+    "idPropietario": "789456123A",
+    "direccion": "1313  Locust Street",
+    "ciudad": "SEVILLA",
+    "provincia": "SEVILLA",
+    "idCoordenadas": "99.254"
+  },
+    {
+    "idPropietario": "987654321A",
+    "direccion": "4194  Stadium Drive",
+    "ciudad": "LETUR",
+    "provincia": "LETUR",
+    "idCoordenadas": "-9.265"
+  },
+    {
+    "idPropietario": "987654321A",
+    "direccion": "725  Reppert Coal Road",
+    "ciudad": "MADRID",
+    "provincia": "MADRID",
+    "idCoordenadas": "5.694"
+  },
+  {
+    "idPropietario": "987654321A",
+    "direccion": "4014  West Side Avenue",
+    "ciudad": "ORGAZ",
+    "provincia": "ORGAZ",
+    "idCoordenadas": "36.325"
+  }
+  ]

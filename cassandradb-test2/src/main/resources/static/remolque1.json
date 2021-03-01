@@ -1,0 +1,42 @@
+[
+  {
+    "numeroBastidor": "555555555",
+    "matricula": "0000BBB",
+    "marca": "CITROEN",
+    "modelo": "500KG",
+    "tipo": "1",
+    "idCarga": "00"
+  },
+    {
+    "numeroBastidor":"666666666",
+    "matricula": "1111BBB",
+    "marca": "MERCEDES",
+    "modelo": "1000KG",
+    "tipo": "5",
+    "idCarga": "11"
+  },
+    {
+    "numeroBastidor": "777777777",
+    "matricula": "2222BBB",
+    "marca": "DACIA",
+    "modelo": "10000KG",
+    "tipo": "10",
+    "idCarga": "22"
+  },
+    {
+    "numeroBastidor": "888888888",
+    "matricula": "3333BBB",
+    "marca": "LANCIA",
+    "modelo": "3500KG",
+    "tipo": "8",
+    "idCarga": "33"
+  },
+    {
+    "numeroBastidor": "999999999",
+    "matricula": "4444BBB",
+    "marca": "OPEL",
+    "modelo": "7500KG",
+    "tipo": "5",
+    "idCarga": "44"
+  }
+  ]
