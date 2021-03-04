@@ -1,31 +1,34 @@
 package model;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-@Table("OrigenDestino")
+@Table
 public class OrigenDestino implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Column("idPropietario")
+	@PrimaryKey 
+	private String id = UUID.randomUUID().toString();
+	
 	private String idPropietario;
 	
-	@PrimaryKeyColumn(name = "direccion", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-	@Column("direccion")
+	
 	private String direccion;
 
-	@Column("ciudad")
+
 	private String ciudad;
 	
-	@Column("provincia")
+	
 	private String provincia;
 	
-	@Column("idCoordenadas")
+	
 	private String idCoordenadas;
 
 	public String getIdPropietario() {

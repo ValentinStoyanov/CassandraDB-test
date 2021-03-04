@@ -1,31 +1,33 @@
 package model;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-@Table("Propietario")
+@Table
 public class Propietario implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@PrimaryKeyColumn(name = "dni", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-	@Column("dni")
+	@PrimaryKey 
+	private String id = UUID.randomUUID().toString();
 	private String dni;
 	
-	@Column("nombreFiscal")
+	
 	private String nombreFiscal;
 	
-	@Column("nombreComercial")
+	
 	private String nombreComercial;
 	
-	@Column("nombrePropietario")
+	
 	private String nombrePropietario;
 	
-	@Column("telefono")
+
 	private String telefono;
 
 	public String getDni() {

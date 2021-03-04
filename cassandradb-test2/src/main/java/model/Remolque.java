@@ -1,35 +1,36 @@
 package model;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-@Table("Remolque")
+@Table
 public class Remolque implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@PrimaryKeyColumn(name = "numeroBastidor", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-	@Column("numeroBastidor")
+	@PrimaryKey 
+	private String id = UUID.randomUUID().toString();
 	private String numeroBastidor;
 	
 	
-	@Column("matricula")
+	
 	private String matricula;
 	
-	@Column("marca")
-	private String marca;
 	
-	@Column("modelo")
+	private String marca;
+
 	private String modelo;
 	
-	@Column("tipo")
+	
 	private String tipo;
 	
-	@Column("idCarga")
+	
 	private String idCarga;
 
 	public String getNumeroBastidor() {

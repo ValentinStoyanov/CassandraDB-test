@@ -1,29 +1,31 @@
 package model;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-@Table("Coordenada")
+@Table
 public class Coordenada implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	
-	@PrimaryKeyColumn(name = "latitud", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-	@Column("latitud")
+	@PrimaryKey 
+	private String id = UUID.randomUUID().toString();
 	private String latitud;
 	
-	@Column("longitud")
+	
 	private String longitud;
 	
-	@Column("altitud")
+	
 	private String altitud;
 	
-	@Column("tiempo")
+	
 	private String tiempo;
 
 	public static long getSerialversionuid() {
