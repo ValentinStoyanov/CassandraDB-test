@@ -21,8 +21,16 @@ public class Conductor implements Serializable{
 	private String nombre;
 
 	private String apellidos;
+	
+	private String permisosConducir;
 
-	private String permisoConducir;
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getDni() {
 		return dni;
@@ -48,16 +56,18 @@ public class Conductor implements Serializable{
 		this.apellidos = apellidos;
 	}
 
-	public String getPermisoConducir() {
-		return permisoConducir;
+	public String getPermisosConducir() {
+		return permisosConducir;
 	}
 
-	public void setPermisoConducir(String permisoConducir) {
-		this.permisoConducir = permisoConducir;
+	public void setPermisosConducir(String permisosConducir) {
+		this.permisosConducir = permisosConducir;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+
 
 }
