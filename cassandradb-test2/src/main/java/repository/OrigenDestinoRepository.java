@@ -11,4 +11,6 @@ import model.OrigenDestino;
 @Repository
 public interface OrigenDestinoRepository extends CrudRepository<OrigenDestino, Serializable>{
 
+	OrigenDestino findByDireccion(String idorigen);
+
 }

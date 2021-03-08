@@ -19,8 +19,8 @@ public class Carga implements Serializable{
 	private String codigo;
 	private String tipo;
 	private String peso;
-	private String idOrigen;
-	private String idDestino;
+	private String idorigen;
+	private String iddestino;
 
 	public String getCodigo() {
 		return codigo;
@@ -46,24 +46,25 @@ public class Carga implements Serializable{
 		this.peso = peso;
 	}
 
-	public String getIdOrigen() {
-		return idOrigen;
-	}
-
-	public void setIdOrigen(String idOrigen) {
-		this.idOrigen = idOrigen;
-	}
-
-	public String getIdDestino() {
-		return idDestino;
-	}
-
-	public void setIdDestino(String idDestino) {
-		this.idDestino = idDestino;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getIdorigen() {
+		return idorigen;
+	}
+
+	public void setIdorigen(String idorigen) {
+		this.idorigen = idorigen;
+	}
+
+	public String getIddestino() {
+		return iddestino;
+	}
+
+	public void setIddestino(String iddestino) {
+		this.iddestino = iddestino;
 	}
 	
 	

@@ -11,4 +11,6 @@ import model.Viaje;
 @Repository
 public interface ViajeRepository extends CrudRepository<Viaje, Serializable>{
 
+	Viaje findByIdconductor(String dni);
+
 }

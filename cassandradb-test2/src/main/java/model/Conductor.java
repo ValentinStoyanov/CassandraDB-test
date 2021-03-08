@@ -22,7 +22,7 @@ public class Conductor implements Serializable{
 
 	private String apellidos;
 	
-	private String permisosConducir;
+	private String permisosconducir;
 
 	public String getId() {
 		return id;
@@ -56,16 +56,18 @@ public class Conductor implements Serializable{
 		this.apellidos = apellidos;
 	}
 
-	public String getPermisosConducir() {
-		return permisosConducir;
-	}
 
-	public void setPermisosConducir(String permisosConducir) {
-		this.permisosConducir = permisosConducir;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getPermisosconducir() {
+		return permisosconducir;
+	}
+
+	public void setPermisosconducir(String permisosconducir) {
+		this.permisosconducir = permisosconducir;
 	}
 
 

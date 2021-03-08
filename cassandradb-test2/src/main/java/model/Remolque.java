@@ -16,7 +16,7 @@ public class Remolque implements Serializable{
 	
 	@PrimaryKey 
 	private String id = UUID.randomUUID().toString();
-	private String numeroBastidor;
+	private String numerobastidor;
 	
 	
 	
@@ -31,15 +31,8 @@ public class Remolque implements Serializable{
 	private String tipo;
 	
 	
-	private String idCarga;
+	private String idcarga;
 
-	public String getNumeroBastidor() {
-		return numeroBastidor;
-	}
-
-	public void setNumeroBastidor(String numeroBastidor) {
-		this.numeroBastidor = numeroBastidor;
-	}
 
 	public String getMatricula() {
 		return matricula;
@@ -73,16 +66,33 @@ public class Remolque implements Serializable{
 		this.tipo = tipo;
 	}
 
-	public String getIdCarga() {
-		return idCarga;
-	}
-
-	public void setIdCarga(String idCarga) {
-		this.idCarga = idCarga;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getNumerobastidor() {
+		return numerobastidor;
+	}
+
+	public void setNumerobastidor(String numerobastidor) {
+		this.numerobastidor = numerobastidor;
+	}
+
+	public String getIdcarga() {
+		return idcarga;
+	}
+
+	public void setIdcarga(String idcarga) {
+		this.idcarga = idcarga;
 	}
 
 }

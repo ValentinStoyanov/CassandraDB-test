@@ -16,39 +16,55 @@ public class Viaje implements Serializable{
 	
 	@PrimaryKey 
 	private String id = UUID.randomUUID().toString();
-	private String idConductor;
+	private String idconductor;
 	
 
-	private String idCamion;
+	private String idcamion;
 	
 
-	private String idRemolque;
+	private String idremolque;
 
-	public String getIdConductor() {
-		return idConductor;
-	}
 
-	public void setIdConductor(String idConductor) {
-		this.idConductor = idConductor;
-	}
-
-	public String getIdCamion() {
-		return idCamion;
-	}
-
-	public void setIdCamion(String idCamion) {
-		this.idCamion = idCamion;
-	}
-
-	public String getIdRemolque() {
-		return idRemolque;
-	}
-
-	public void setIdRemolque(String idRemolque) {
-		this.idRemolque = idRemolque;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+
+
+	public String getIdconductor() {
+		return idconductor;
+	}
+
+
+
+	public void setIdconductor(String idconductor) {
+		this.idconductor = idconductor;
+	}
+
+
+
+	public String getIdcamion() {
+		return idcamion;
+	}
+
+
+
+	public void setIdcamion(String idcamion) {
+		this.idcamion = idcamion;
+	}
+
+
+
+	public String getIdremolque() {
+		return idremolque;
+	}
+
+
+
+	public void setIdremolque(String idremolque) {
+		this.idremolque = idremolque;
+	}
+
+
 }

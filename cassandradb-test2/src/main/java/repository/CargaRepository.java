@@ -10,4 +10,6 @@ import model.Carga;
 @Repository
 public interface CargaRepository extends CrudRepository<Carga, Serializable>{
 
+	Carga findByCodigo(String idcarga);
+
 }

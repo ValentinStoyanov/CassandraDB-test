@@ -10,4 +10,6 @@ import model.Camion;
 @Repository
 public interface CamionRepository extends CrudRepository<Camion, Serializable>{
 
+	Camion findByMatricula(String idcamion);
+
 }

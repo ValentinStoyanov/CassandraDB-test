@@ -16,19 +16,13 @@ public class Camion implements Serializable{
 	
 	@PrimaryKey 
 	private String id = UUID.randomUUID().toString();
-	private String numeroBastidor;
+	private String numerobastidor;
 	private String matricula;
 	private String marca;
 	private String modelo;
 	private String tipo;
 
-	public String getNumeroBastidor() {
-		return numeroBastidor;
-	}
 
-	public void setNumeroBastidor(String numeroBastidor) {
-		this.numeroBastidor = numeroBastidor;
-	}
 
 	public String getMatricula() {
 		return matricula;
@@ -64,6 +58,14 @@ public class Camion implements Serializable{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getNumerobastidor() {
+		return numerobastidor;
+	}
+
+	public void setNumerobastidor(String numerobastidor) {
+		this.numerobastidor = numerobastidor;
 	}
 	
 	

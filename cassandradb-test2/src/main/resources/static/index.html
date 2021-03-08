@@ -65,7 +65,7 @@ function i_camion() {
 	   
 	var ajaxTime= new Date().getTime();
 	
-	fetch("camion.json")
+	fetch("camiones.json")
 	.then(response => response.json())
 	.then(result => {
 	    
@@ -93,7 +93,7 @@ function i_camion() {
 function i_carga() {
 	   
 	var ajaxTime= new Date().getTime();
-	fetch("carga.json")
+	fetch("cargas.json")
 	.then(response => response.json())
 	.then(result => {
 	    
@@ -121,7 +121,7 @@ function i_carga() {
 function i_conductor() {
 	   
 	var ajaxTime= new Date().getTime();
-	fetch("conductor.json")
+	fetch("conductores.json")
 	.then(response => response.json())
 	.then(result => {
 	    
@@ -150,7 +150,7 @@ function i_conductor() {
 function i_coordenada() {
 	   
 	var ajaxTime= new Date().getTime();
-	fetch("coordenada.json")
+	fetch("coordenadas.json")
 	.then(response => response.json())
 	.then(result => {
 	  
@@ -179,7 +179,7 @@ function i_coordenada() {
 function i_origendestino() {
 	   
 	var ajaxTime= new Date().getTime();
-	fetch("origendestino.json")
+	fetch("origendestinos.json")
 	.then(response => response.json())
 	.then(result => {
 	    
@@ -207,7 +207,7 @@ function i_origendestino() {
 
 function i_propietario() {
 	var ajaxTime= new Date().getTime();
-	fetch("propietario.json")
+	fetch("propietarios.json")
 	.then(response => response.json())
 	.then(result => {
 	    
@@ -236,7 +236,7 @@ function i_propietario() {
 function i_remolque() {
 	   
 	var ajaxTime= new Date().getTime();
-	fetch("remolque.json")
+	fetch("remolques.json")
 	.then(response => response.json())
 	.then(result => {
 	  
@@ -265,7 +265,7 @@ function i_remolque() {
 function i_viaje() {
 	   
 	var ajaxTime= new Date().getTime();
-	fetch("viaje.json")
+	fetch("viajes.json")
 	.then(response => response.json())
 	.then(result => {
 	    

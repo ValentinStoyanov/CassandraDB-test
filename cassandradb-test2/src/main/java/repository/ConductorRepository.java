@@ -11,4 +11,6 @@ import model.Conductor;
 @Repository
 public interface ConductorRepository extends CrudRepository<Conductor, Serializable>{
 
+	Conductor findByDni(String dni);
+
 }

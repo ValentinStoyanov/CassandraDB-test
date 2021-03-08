@@ -17,7 +17,7 @@ public class OrigenDestino implements Serializable{
 	@PrimaryKey 
 	private String id = UUID.randomUUID().toString();
 	
-	private String idPropietario;
+	private String idpropietario;
 	
 	
 	private String direccion;
@@ -29,15 +29,9 @@ public class OrigenDestino implements Serializable{
 	private String provincia;
 	
 	
-	private String idCoordenadas;
+	private String idcoordenadas;
 
-	public String getIdPropietario() {
-		return idPropietario;
-	}
 
-	public void setIdPropietario(String idPropietario) {
-		this.idPropietario = idPropietario;
-	}
 
 	public String getDireccion() {
 		return direccion;
@@ -63,16 +57,26 @@ public class OrigenDestino implements Serializable{
 		this.provincia = provincia;
 	}
 
-	public String getIdCoordenadas() {
-		return idCoordenadas;
-	}
 
-	public void setIdCoordenadas(String idCoordenadas) {
-		this.idCoordenadas = idCoordenadas;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getIdpropietario() {
+		return idpropietario;
+	}
+
+	public void setIdpropietario(String idpropietario) {
+		this.idpropietario = idpropietario;
+	}
+
+	public String getIdcoordenadas() {
+		return idcoordenadas;
+	}
+
+	public void setIdcoordenadas(String idcoordenadas) {
+		this.idcoordenadas = idcoordenadas;
 	}
 	
 }

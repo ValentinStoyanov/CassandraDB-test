@@ -19,13 +19,13 @@ public class Propietario implements Serializable{
 	private String dni;
 	
 	
-	private String nombreFiscal;
+	private String nombrefiscal;
 	
 	
-	private String nombreComercial;
+	private String nombrecomercial;
 	
 	
-	private String nombrePropietario;
+	private String nombrepropietario;
 	
 
 	private String telefono;
@@ -38,29 +38,6 @@ public class Propietario implements Serializable{
 		this.dni = dni;
 	}
 
-	public String getNombreFiscal() {
-		return nombreFiscal;
-	}
-
-	public void setNombreFiscal(String nombreFiscal) {
-		this.nombreFiscal = nombreFiscal;
-	}
-
-	public String getNombreComercial() {
-		return nombreComercial;
-	}
-
-	public void setNombreComercial(String nombreComercial) {
-		this.nombreComercial = nombreComercial;
-	}
-
-	public String getNombrePropietario() {
-		return nombrePropietario;
-	}
-
-	public void setNombrePropietario(String nombrePropietario) {
-		this.nombrePropietario = nombrePropietario;
-	}
 
 	public String getTelefono() {
 		return telefono;
@@ -72,6 +49,30 @@ public class Propietario implements Serializable{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getNombrefiscal() {
+		return nombrefiscal;
+	}
+
+	public void setNombrefiscal(String nombrefiscal) {
+		this.nombrefiscal = nombrefiscal;
+	}
+
+	public String getNombrecomercial() {
+		return nombrecomercial;
+	}
+
+	public void setNombrecomercial(String nombrecomercial) {
+		this.nombrecomercial = nombrecomercial;
+	}
+
+	public String getNombrepropietario() {
+		return nombrepropietario;
+	}
+
+	public void setNombrepropietario(String nombrepropietario) {
+		this.nombrepropietario = nombrepropietario;
 	}
 	
 }

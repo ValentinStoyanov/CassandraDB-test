@@ -11,4 +11,6 @@ import model.Remolque;
 @Repository
 public interface RemolqueRepository extends CrudRepository<Remolque, Serializable>{
 
+	Remolque findByMatricula(String idremolque);
+
 }
