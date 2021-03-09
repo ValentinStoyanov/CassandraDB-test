@@ -44,7 +44,6 @@ public class ConsultController {
 	
 	
 	@GetMapping(value="getViaje")
-	@Query(allowFiltering=true)
     public String getConductor(@RequestParam String dni){
 		
 		Viaje viaje = this.viajeRepository.findByIdconductor(dni);
@@ -69,6 +68,49 @@ public class ConsultController {
 		
         return resultado;
     }
+	
+	@GetMapping(value="getRutas")
+	public String getViajes(@RequestParam int min, @RequestParam int max ) {
+		
+
+		String resultado = "";
+		
+		Carga carga;
+		OrigenDestino origen;
+		OrigenDestino destino;
+		Remolque remolque;
+		Viaje viaje;
+		Conductor conductor;
+		Camion camion;
+		
+		
+		for (int i = min ; i < max; i++) {
+			
+			carga = this.cargaRepository.findByCodigo(i);
+			
+			origen = this.orepository.findByDireccion(carga.getIdorigen());
+			
+			destino = this.orepository.findByDireccion(carga.getIddestino());
+			
+			remolque = this.remolqueRepository.findByIdcarga(carga.getCodigo());
+			
+			viaje = this.viajeRepository.findByIdremolque(remolque.getMatricula());
+			
+			conductor = this.conductorRepository.findByDni(viaje.getIdconductor());
+			
+			camion = this.camionRepository.findByMatricula(viaje.getIdcamion());
+			
+			resultado = resultado + "Conductor dni: "+ conductor.getDni() +" Nombre: "+ conductor.getNombre() +"  Camion matricula : "+ camion.getMatricula()
+			+ " Remolque matricula : "+ remolque.getMatricula() + "\n"
+			+ " Carga: " + carga.getTipo() + " Origen: "+ origen.getDireccion()+" Destino: "+destino.getDireccion()+"\n \n";
+			
+		}
+		
+		
+		
+		
+		return resultado;
+	}
 	
 	
 }

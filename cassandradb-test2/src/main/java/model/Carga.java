@@ -16,17 +16,17 @@ public class Carga implements Serializable{
 	
 	@PrimaryKey 
 	private String id = UUID.randomUUID().toString();
-	private String codigo;
+	private int codigo;
 	private String tipo;
 	private String peso;
 	private String idorigen;
 	private String iddestino;
 
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 

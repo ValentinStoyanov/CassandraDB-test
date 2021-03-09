@@ -31,7 +31,7 @@ public class Remolque implements Serializable{
 	private String tipo;
 	
 	
-	private String idcarga;
+	private int idcarga;
 
 
 	public String getMatricula() {
@@ -65,6 +65,15 @@ public class Remolque implements Serializable{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
+	
+	public int getIdcarga() {
+		return idcarga;
+	}
+
+	public void setIdcarga(int idcarga) {
+		this.idcarga = idcarga;
+	}
 
 
 	public static long getSerialversionuid() {
@@ -87,12 +96,6 @@ public class Remolque implements Serializable{
 		this.numerobastidor = numerobastidor;
 	}
 
-	public String getIdcarga() {
-		return idcarga;
-	}
 
-	public void setIdcarga(String idcarga) {
-		this.idcarga = idcarga;
-	}
 
 }
