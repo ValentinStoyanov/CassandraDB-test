@@ -37,12 +37,19 @@ public class CargaremolqueController {
 	
 
 	@PostMapping(value = "insertallext")
-	public List<Remolque> insertAllext() {
+	public Iterable<Cargaremolque> insertAllext() {
+		
 		
 		Iterator<Carga>  itc = this.cargaRepository.findAll().iterator();
 		Iterator<Remolque>  itr = this.remolqueRepository.findAll().iterator();
 		
 		List<Remolque> lr = new ArrayList();
+		List<Carga> lc = new ArrayList();
+		List<Cargaremolque> list = new ArrayList();
+		
+		Carga carga = new Carga();
+		
+		Cargaremolque cr ;
 		
 		while(itr.hasNext()) {
 			
@@ -50,11 +57,40 @@ public class CargaremolqueController {
 			
 		}
 		
+		while(itc.hasNext()) {
+			lc.add(itc.next());
+		}
 		
-		
-		
+		for(int i = 0; i < lc.size();i++) {
 			
-		return lr;
+			for(int j = 0; j<lr.size();j++) {
+				
+			
+				if(lc.get(i).getCodigo()==lr.get(j).getIdcarga()) {
+					
+					// id, codigo, idcarga, iddestino, idorigen,  marca,  matricula,  modelo,  numerobastidor,  peso,  tipocarga,  tiporemolque
+					
+					
+					list.add(new Cargaremolque(lc.get(i).getId(),
+							lc.get(i).getCodigo(),
+							lr.get(j).getIdcarga(),
+							lc.get(i).getIddestino(),
+							lc.get(i).getIdorigen(),
+							lr.get(j).getMarca(),
+							lr.get(j).getMatricula(),
+							lr.get(j).getModelo(),
+							lr.get(j).getNumerobastidor(),
+							lc.get(i).getPeso(),
+							lc.get(i).getTipo(),
+							lr.get(j).getTipo()
+							));
+					
+				}
+			}
+		}
+		
+		return this.cargaremolqueRepository.saveAll(list);
+	
 	}
 		
 	

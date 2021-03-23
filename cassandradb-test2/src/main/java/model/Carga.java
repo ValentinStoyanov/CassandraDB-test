@@ -18,7 +18,7 @@ public class Carga implements Serializable{
 	private String id = UUID.randomUUID().toString();
 	private int codigo;
 	private String tipo;
-	private String peso;
+	private int peso;
 	private String idorigen;
 	private String iddestino;
 
@@ -38,11 +38,11 @@ public class Carga implements Serializable{
 		this.tipo = tipo;
 	}
 
-	public String getPeso() {
+	public int getPeso() {
 		return peso;
 	}
 
-	public void setPeso(String peso) {
+	public void setPeso(int peso) {
 		this.peso = peso;
 	}
 

@@ -9,6 +9,23 @@ import org.springframework.data.cassandra.core.mapping.Table;
 @Table
 public class Cargaremolque implements Serializable{
 
+	public Cargaremolque(String id, int codigo, int idcarga, String iddestino, String idorigen, String marca,
+			String matricula, String modelo, String numerobastidor, int peso, String tipocarga, String tiporemolque) {
+		super();
+		this.id = id;
+		this.codigo = codigo;
+		this.idcarga = idcarga;
+		this.iddestino = iddestino;
+		this.idorigen = idorigen;
+		this.marca = marca;
+		this.matricula = matricula;
+		this.modelo = modelo;
+		this.numerobastidor = numerobastidor;
+		this.peso = peso;
+		this.tipocarga = tipocarga;
+		this.tiporemolque = tiporemolque;
+	}
+
 	private static final long serialVersionUID = 1L;
 	
 	@PrimaryKey 
@@ -21,7 +38,7 @@ public class Cargaremolque implements Serializable{
 	private String matricula;
 	private String modelo;
 	private String numerobastidor;
-	private String peso;
+	private int peso;
 	private String tipocarga;
 	private String tiporemolque;
 	
@@ -83,10 +100,10 @@ public class Cargaremolque implements Serializable{
 	public void setNumerobastidor(String numerobastidor) {
 		this.numerobastidor = numerobastidor;
 	}
-	public String getPeso() {
+	public int getPeso() {
 		return peso;
 	}
-	public void setPeso(String peso) {
+	public void setPeso(int peso) {
 		this.peso = peso;
 	}
 	public String getTipocarga() {
