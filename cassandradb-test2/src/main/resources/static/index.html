@@ -2,455 +2,54 @@
 <html>
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	
-<h1>CassandraDB insercion de datos</h1>
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-<p>Insertar todos los datos</p>
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-<button onclick="i_all()">Iniciar</button> <br />
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-<p>Insertar por collection</p>
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
 
-<button onclick="i_camion()">Camion</button>
-<button onclick="i_carga()">Carga</button>
-<button onclick="i_conductor()">Conductor</button>
-<button onclick="i_coordenada()">Coordenada</button>
-<button onclick="i_origendestino()">OrigenDestino</button>
-<button onclick="i_propietario()">Propietario</button>
-<button onclick="i_remolque()">Remolque</button>
-<button onclick="i_viaje()">Viaje</button> <br />
+<div class="topnav">
+  <a  class="active"  href="index.html" >Home</a>
+  <a   href="insertar.html">Insert</a>
+  <a href="borrar.html">Delete</a>
 
-<p>Borrar todo</p>
+</div >
+	
+	<div>
+	
+	
+	
+<h1>CassandraDB</h1>
+<h2>Select what you want to do in the menu above</h2>
 
-<button onclick="borrado()">Borrar todo</button>
-
-<p>Borrar por collection</p>
-
-<button onclick="b_camion()">Camion</button>
-<button onclick="b_carga()">Carga</button>
-<button onclick="b_conductor()">Conductor</button>
-<button onclick="b_coordenada()">Coordenada</button>
-<button onclick="b_origendestino()">OrigenDestino</button>
-<button onclick="b_propietario()">Propietario</button>
-<button onclick="b_remolque()">Remolque</button>
-<button onclick="b_viaje()">Viaje</button> <br />
-
-
+</div>
 
 </html>
-
-<script>
-
-
-function i_all(){
-	
-	
-	
-	i_camion()
-	i_carga()
-	i_conductor()
-	i_coordenada()
-	i_origendestino()
-	i_propietario()
-	i_remolque()
-	i_viaje()
-	
-	
-	
-
-}
-
-
-function i_camion() {
-	   
-	var ajaxTime= new Date().getTime();
-	
-	fetch("camiones.json")
-	.then(response => response.json())
-	.then(result => {
-	    
-	    
-	    var settings = {
-			  "url": "http://localhost:8080/camion/create",
-			  "method": "POST",
-			  "timeout": 0,
-			  "headers": {
-			    "Content-Type": "application/json"
-			  },
-			  "data": JSON.stringify(result),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var totalTime = new Date().getTime()-ajaxTime;
-				console.log(response)
-			  console.log("Time to insert camion.json: "+totalTime);
-			});
-	    
-	});
-	
-}
-
-function i_carga() {
-	   
-	var ajaxTime= new Date().getTime();
-	fetch("cargas.json")
-	.then(response => response.json())
-	.then(result => {
-	    
-	    
-	    var settings = {
-			  "url": "http://localhost:8080/carga/create",
-			  "method": "POST",
-			  "timeout": 0,
-			  "headers": {
-			    "Content-Type": "application/json"
-			  },
-			  "data": JSON.stringify(result),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var totalTime = new Date().getTime()-ajaxTime;
-			  console.log(response);
-			  console.log("Time to insert carga.json: "+totalTime);
-			});
-	    
-	});
-	
-}
-
-function i_conductor() {
-	   
-	var ajaxTime= new Date().getTime();
-	fetch("conductores.json")
-	.then(response => response.json())
-	.then(result => {
-	    
-	    
-	    var settings = {
-			  "url": "http://localhost:8080/conductor/create",
-			  "method": "POST",
-			  "timeout": 0,
-			  "headers": {
-			    "Content-Type": "application/json"
-			  },
-			  "data": JSON.stringify(result),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var totalTime = new Date().getTime()-ajaxTime;
-			  console.log(response);
-			  console.log("Time to insert conductor.json: "+totalTime);
-			});
-	    
-	});
-	
-}
-
-
-function i_coordenada() {
-	   
-	var ajaxTime= new Date().getTime();
-	fetch("coordenadas.json")
-	.then(response => response.json())
-	.then(result => {
-	  
-	    
-	    var settings = {
-			  "url": "http://localhost:8080/coordenada/create",
-			  "method": "POST",
-			  "timeout": 0,
-			  "headers": {
-			    "Content-Type": "application/json"
-			  },
-			  "data": JSON.stringify(result),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var totalTime = new Date().getTime()-ajaxTime;
-			  console.log(response);
-			  console.log("Time to insert coordenada.json: "+totalTime);
-			});
-	    
-	});
-	
-}
-
-
-function i_origendestino() {
-	   
-	var ajaxTime= new Date().getTime();
-	fetch("origendestinos.json")
-	.then(response => response.json())
-	.then(result => {
-	    
-	    
-	    var settings = {
-			  "url": "http://localhost:8080/origendestino/create",
-			  "method": "POST",
-			  "timeout": 0,
-			  "headers": {
-			    "Content-Type": "application/json"
-			  },
-			  "data": JSON.stringify(result),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var totalTime = new Date().getTime()-ajaxTime;
-			  console.log(response);
-			  console.log("Time to insert origendestino.json: "+totalTime);
-			});
-	    
-	});
-	
-}
-
-
-function i_propietario() {
-	var ajaxTime= new Date().getTime();
-	fetch("propietarios.json")
-	.then(response => response.json())
-	.then(result => {
-	    
-	    
-	    var settings = {
-			  "url": "http://localhost:8080/propietario/create",
-			  "method": "POST",
-			  "timeout": 0,
-			  "headers": {
-			    "Content-Type": "application/json"
-			  },
-			  "data": JSON.stringify(result),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var totalTime = new Date().getTime()-ajaxTime;
-			  console.log(response);
-			  console.log("Time to insert propietario.json: "+totalTime);
-			});
-	    
-	});
-	
-}
-
-
-function i_remolque() {
-	   
-	var ajaxTime= new Date().getTime();
-	fetch("remolques.json")
-	.then(response => response.json())
-	.then(result => {
-	  
-	    
-	    var settings = {
-			  "url": "http://localhost:8080/remolque/create",
-			  "method": "POST",
-			  "timeout": 0,
-			  "headers": {
-			    "Content-Type": "application/json"
-			  },
-			  "data": JSON.stringify(result),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var totalTime = new Date().getTime()-ajaxTime;
-			  console.log(response);
-			  console.log("Time to insert remolque.json: "+totalTime);
-			});
-	    
-	});
-	
-}
-
-
-function i_viaje() {
-	   
-	var ajaxTime= new Date().getTime();
-	fetch("viajes.json")
-	.then(response => response.json())
-	.then(result => {
-	    
-	    
-	    var settings = {
-			  "url": "http://localhost:8080/viaje/create",
-			  "method": "POST",
-			  "timeout": 0,
-			  "headers": {
-			    "Content-Type": "application/json"
-			  },
-			  "data": JSON.stringify(result),
-			};
-
-			$.ajax(settings).done(function (response) {
-				var totalTime = new Date().getTime()-ajaxTime;
-			  console.log(response);
-			  console.log("Time to insert viaje.json: "+totalTime);
-			});
-	    
-	});
-	
-}
-
-
-function b_viaje() {
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/viaje/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-}
-
-function b_remolque() {
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/remolque/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-}
-
-function b_propietario() {
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/propietario/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-}
-
-function b_origendestino() {
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/origendestino/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-}
-
-function b_coordenada() {
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/coordenada/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-}
-
-
-function b_conductor() {
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/conductor/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-}
-
-
-function b_carga() {
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/carga/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-}
-
-
-function b_camion() {
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/camion/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-}
-
-
-function borrado(){
-	
-	alert("borrando")
-	
-	$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/camion/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-		$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/carga/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-		$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/conductor/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-		$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/coordenada/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-		$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/origendestino/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-		$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/propietario/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-		$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/remolque/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-		$.ajax({
-	    type:"POST", 
-	    url:"http://localhost:8080/viaje/deleteAll", 
-	    success:function(datos){ 
-	         console.log(datos.promedio)
-	     },
-	})
-	
-}
-</script>
