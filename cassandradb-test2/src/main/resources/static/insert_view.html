@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a    href="index.html" >Home</a>
+  <a  class="active" href="insert_view.html">Insert</a>
+  <a href="delete_view.html">Delete</a>
+
+</div >
+
+
+<div style="padding-left:16px">
+
+<p>Insert all data</p>
+
+
+<button onclick="i_all()">Start</button> <br />
+
+<p>Insert by collection</p>
+
+<button onclick="i_camion()">Camion</button>
+<button onclick="i_carga()">Carga</button>
+<button onclick="i_conductor()">Conductor</button>
+<button onclick="i_coordenada()">Coordenada</button>
+<button onclick="i_origendestino()">OrigenDestino</button>
+<button onclick="i_propietario()">Propietario</button>
+<button onclick="i_remolque()">Remolque</button>
+<button onclick="i_viaje()">Viaje</button> <br />
+
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+
+function i_all(){
+	
+	
+	
+	i_camion()
+	i_carga()
+	i_conductor()
+	i_coordenada()
+	i_origendestino()
+	i_propietario()
+	i_remolque()
+	i_viaje()
+	
+	
+	
+
+}
+
+
+function i_camion() {
+	   
+	var ajaxTime= new Date().getTime();
+	
+	fetch("truck.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/truck/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+				console.log(response)
+			  console.log("Time to insert camion.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+function i_carga() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("load.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/load/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert carga.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+function i_conductor() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("driver.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/driver/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert conductor.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_coordenada() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("coordinate.json")
+	.then(response => response.json())
+	.then(result => {
+	  
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/coordinate/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert coordenada.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_origendestino() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("origindestiny.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/origindestiny/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert origendestino.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_propietario() {
+	var ajaxTime= new Date().getTime();
+	fetch("owner.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/owner/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert propietario.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_remolque() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("trailer.json")
+	.then(response => response.json())
+	.then(result => {
+	  
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/trailer/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert remolque.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+function i_viaje() {
+	   
+	var ajaxTime= new Date().getTime();
+	fetch("travel.json")
+	.then(response => response.json())
+	.then(result => {
+	    
+	    
+	    var settings = {
+			  "url": "http://localhost:8080/travel/create",
+			  "method": "POST",
+			  "timeout": 0,
+			  "headers": {
+			    "Content-Type": "application/json"
+			  },
+			  "data": JSON.stringify(result),
+			};
+
+			$.ajax(settings).done(function (response) {
+				var totalTime = new Date().getTime()-ajaxTime;
+			  console.log(response);
+			  console.log("Time to insert viaje.json: "+totalTime);
+			});
+	    
+	});
+	
+}
+
+
+
+</script>
+
+</html>

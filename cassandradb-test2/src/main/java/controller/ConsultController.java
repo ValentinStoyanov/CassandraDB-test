@@ -7,63 +7,63 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Camion;
-import model.Carga;
-import model.Conductor;
-import model.OrigenDestino;
-import model.Remolque;
-import model.Viaje;
-import repository.CamionRepository;
-import repository.CargaRepository;
-import repository.ConductorRepository;
-import repository.OrigenDestinoRepository;
-import repository.RemolqueRepository;
-import repository.ViajeRepository;
+import model.Truck;
+import model.Load;
+import model.Driver;
+import model.OriginDestiny;
+import model.Trailer;
+import model.Travel;
+import repository.TruckRepository;
+import repository.LoadRepository;
+import repository.DriverRepository;
+import repository.OriginDestinyRepository;
+import repository.TrailerRepository;
+import repository.TravelRepository;
 
 @RestController
 @RequestMapping("consulta")
 public class ConsultController {
 
 	@Autowired
-	private ViajeRepository viajeRepository;
+	private TravelRepository viajeRepository;
 	
 	@Autowired
-	private ConductorRepository conductorRepository; 
+	private DriverRepository conductorRepository; 
 	
 	@Autowired
-	private CamionRepository camionRepository;
+	private TruckRepository camionRepository;
 	
 	@Autowired
-	private RemolqueRepository remolqueRepository;
+	private TrailerRepository remolqueRepository;
 	
 	@Autowired
-	private CargaRepository cargaRepository;
+	private LoadRepository cargaRepository;
 	
 	@Autowired
-	private OrigenDestinoRepository orepository;
+	private OriginDestinyRepository orepository;
 	
 	
 	@GetMapping(value="getViaje")
     public String getConductor(@RequestParam String dni){
 		
-		Viaje viaje = this.viajeRepository.findByIdconductor(dni);
+		Travel viaje = this.viajeRepository.findByIddriver(dni);
 		
-		Conductor conductor = this.conductorRepository.findByDni(dni);
+		Driver conductor = this.conductorRepository.findByDni(dni);
 		
-		Camion camion = this.camionRepository.findByMatricula(viaje.getIdcamion());
+		Truck camion = this.camionRepository.findByRegistrationtag(viaje.getIdtruck());
 		
-		Remolque remolque = this.remolqueRepository.findByMatricula(viaje.getIdremolque());
+		Trailer remolque = this.remolqueRepository.findByRegistrationtag(viaje.getIdtrailer());
 		
-		Carga carga = this.cargaRepository.findByCodigo(remolque.getIdcarga());
+		Load carga = this.cargaRepository.findByCode(remolque.getIdload());
 		
-		OrigenDestino origen = this.orepository.findByDireccion(carga.getIdorigen());
+		OriginDestiny origen = this.orepository.findByAddress(carga.getIdorigin());
 		
-		OrigenDestino destino = this.orepository.findByDireccion(carga.getIddestino());
+		OriginDestiny destino = this.orepository.findByAddress(carga.getIddestiny());
 		
 		
-		String resultado = "En este viaje el conductor tiene dni: "+ conductor.getDni() +" con nombre: "+ conductor.getNombre() +", el camion matricula : "+ camion.getMatricula()
-		+ "y con el remolque: "+ remolque.getMatricula() + "\n"
-		+ "en el que se carga:" + carga.getTipo() + "Con origen: "+ origen.getDireccion()+", y destino: "+destino.getDireccion();
+		String resultado = "En este viaje el conductor tiene dni: "+ conductor.getDni() +" con nombre: "+ conductor.getName() +", el camion matricula : "+ camion.getRegistrationtag()
+		+ "y con el remolque: "+ remolque.getRegistrationtag() + "\n"
+		+ "en el que se carga:" + carga.getType() + "Con origen: "+ origen.getAddress()+", y destino: "+destino.getAddress();
         
 		
         return resultado;
@@ -75,34 +75,34 @@ public class ConsultController {
 
 		String resultado = "";
 		
-		Carga carga;
-		OrigenDestino origen;
-		OrigenDestino destino;
-		Remolque remolque;
-		Viaje viaje;
-		Conductor conductor;
-		Camion camion;
+		Load carga;
+		OriginDestiny origen;
+		OriginDestiny destino;
+		Trailer remolque;
+		Travel viaje;
+		Driver conductor;
+		Truck camion;
 		
 		
 		for (int i = min ; i < max; i++) {
 			
-			carga = this.cargaRepository.findByCodigo(i);
+			carga = this.cargaRepository.findByCode(i);
 			
-			origen = this.orepository.findByDireccion(carga.getIdorigen());
+			origen = this.orepository.findByAddress(carga.getIdorigin());
 			
-			destino = this.orepository.findByDireccion(carga.getIddestino());
+			destino = this.orepository.findByAddress(carga.getIddestiny());
 			
-			remolque = this.remolqueRepository.findByIdcarga(carga.getCodigo());
+			remolque = this.remolqueRepository.findByIdload(carga.getCode());
 			
-			viaje = this.viajeRepository.findByIdremolque(remolque.getMatricula());
+			viaje = this.viajeRepository.findByIdtrailer(remolque.getRegistrationtag());
 			
-			conductor = this.conductorRepository.findByDni(viaje.getIdconductor());
+			conductor = this.conductorRepository.findByDni(viaje.getIddriver());
 			
-			camion = this.camionRepository.findByMatricula(viaje.getIdcamion());
+			camion = this.camionRepository.findByRegistrationtag(viaje.getIdtruck());
 			
-			resultado = resultado + "Conductor dni: "+ conductor.getDni() +" Nombre: "+ conductor.getNombre() +"  Camion matricula : "+ camion.getMatricula()
-			+ " Remolque matricula : "+ remolque.getMatricula() + "\n"
-			+ " Carga: " + carga.getTipo() + " Origen: "+ origen.getDireccion()+" Destino: "+destino.getDireccion()+"\n \n";
+			resultado = resultado + "Conductor dni: "+ conductor.getDni() +" Nombre: "+ conductor.getName() +"  Camion matricula : "+ camion.getRegistrationtag()
+			+ " Remolque matricula : "+ remolque.getRegistrationtag() + "\n"
+			+ " Carga: " + carga.getType() + " Origen: "+ origen.getAddress()+" Destino: "+destino.getAddress()+"\n \n";
 			
 		}
 		
