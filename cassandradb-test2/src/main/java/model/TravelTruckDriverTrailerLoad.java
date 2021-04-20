@@ -7,13 +7,10 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 @Table
-public class TravelTruckDriverTrailer implements Serializable{
+public class TravelTruckDriverTrailerLoad implements Serializable{
 
-	
-
-
-	public TravelTruckDriverTrailer(String idtruck, String iddriver, String idtrailer, String registrationtagtruck,
-			String registrationtagtrailer, String dni, int code) {
+	public TravelTruckDriverTrailerLoad(String idtruck, String iddriver, String idtrailer, String registrationtagtruck,
+			String registrationtagtrailer, String dni, int code_id, int code_load) {
 		super();
 		this.idtruck = idtruck;
 		this.iddriver = iddriver;
@@ -21,11 +18,14 @@ public class TravelTruckDriverTrailer implements Serializable{
 		this.registrationtagtruck = registrationtagtruck;
 		this.registrationtagtrailer = registrationtagtrailer;
 		this.dni = dni;
-		this.code = code;
+		this.code_id = code_id;
+		this.code_load = code_load;
 	}
 
 
+
 	private static final long serialVersionUID = 1L;
+	
 	
 	@PrimaryKey 
 	private String id = UUID.randomUUID().toString();
@@ -35,7 +35,9 @@ public class TravelTruckDriverTrailer implements Serializable{
 	private String registrationtagtruck;
 	private String registrationtagtrailer;
 	private String dni;
-	private int code;
+	private int code_id;
+	private int code_load;
+	
 	
 	
 	public static long getSerialversionuid() {
@@ -43,9 +45,11 @@ public class TravelTruckDriverTrailer implements Serializable{
 	}
 
 
+
 	public String getIdtruck() {
 		return idtruck;
 	}
+
 
 
 	public void setIdtruck(String idtruck) {
@@ -53,9 +57,11 @@ public class TravelTruckDriverTrailer implements Serializable{
 	}
 
 
+
 	public String getIddriver() {
 		return iddriver;
 	}
+
 
 
 	public void setIddriver(String iddriver) {
@@ -63,9 +69,11 @@ public class TravelTruckDriverTrailer implements Serializable{
 	}
 
 
+
 	public String getIdtrailer() {
 		return idtrailer;
 	}
+
 
 
 	public void setIdtrailer(String idtrailer) {
@@ -73,9 +81,11 @@ public class TravelTruckDriverTrailer implements Serializable{
 	}
 
 
+
 	public String getRegistrationtagtruck() {
 		return registrationtagtruck;
 	}
+
 
 
 	public void setRegistrationtagtruck(String registrationtagtruck) {
@@ -83,9 +93,11 @@ public class TravelTruckDriverTrailer implements Serializable{
 	}
 
 
+
 	public String getRegistrationtagtrailer() {
 		return registrationtagtrailer;
 	}
+
 
 
 	public void setRegistrationtagtrailer(String registrationtagtrailer) {
@@ -93,9 +105,11 @@ public class TravelTruckDriverTrailer implements Serializable{
 	}
 
 
+
 	public String getDni() {
 		return dni;
 	}
+
 
 
 	public void setDni(String dni) {
@@ -103,13 +117,31 @@ public class TravelTruckDriverTrailer implements Serializable{
 	}
 
 
-	public int getCode() {
-		return code;
+
+	public int getCode_id() {
+		return code_id;
 	}
 
 
-	public void setCode(int code) {
-		this.code = code;
+
+	public void setCode_id(int code_id) {
+		this.code_id = code_id;
 	}
+
+
+
+	public int getCode_load() {
+		return code_load;
+	}
+
+
+
+	public void setCode_load(int code_load) {
+		this.code_load = code_load;
+	}
+
+
+
 	
+
 }

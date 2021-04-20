@@ -50,9 +50,8 @@ public class TravelTruckDriverTrailerController {
 	@PostMapping(value = "insertAll")
 	public Iterable<TravelTruckDriverTrailer> insertAll(){
 		
-		String aaa = "";
 		
-		List<TravelTruckDriverTrailer> lista =  new ArrayList();
+		List<TravelTruckDriverTrailer> lista =  new ArrayList<TravelTruckDriverTrailer>();
 		
 		Iterator<Travel> it_travel = this.travelRepository.findAll().iterator();
 		
@@ -109,7 +108,8 @@ public class TravelTruckDriverTrailerController {
 							l_travel.get(i).getIdtrailer(),
 							"",
 							"",
-							l_driver.get(j).getDni()));
+							l_driver.get(j).getDni(),
+							0));
 					
 				}
 				
@@ -139,6 +139,8 @@ public class TravelTruckDriverTrailerController {
 				if(lista.get(i).getIdtrailer().equals(l_trailer.get(j).getRegistrationtag())) {
 					
 					lista.get(i).setRegistrationtagtrailer(l_trailer.get(j).getRegistrationtag());
+					
+					lista.get(i).setCode(l_trailer.get(j).getIdload());
 					
 				}
 				
