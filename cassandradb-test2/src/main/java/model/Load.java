@@ -21,6 +21,7 @@ public class Load implements Serializable{
 	private int load;
 	private String idorigin;
 	private String iddestiny;
+	private double loadtons;
 
 
 	public static long getSerialversionuid() {
@@ -85,6 +86,16 @@ public class Load implements Serializable{
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+
+	public double getLoadtons() {
+		return loadtons;
+	}
+
+
+	public void setLoadtons(double loadtons) {
+		this.loadtons = loadtons;
 	}
 
 

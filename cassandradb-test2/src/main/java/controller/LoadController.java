@@ -28,6 +28,11 @@ public class LoadController {
 	
 	@PostMapping("create")
 	public Iterable<Load> creat(@RequestBody List<Load> load){
+		
+		for(int i = 0; i < load.size(); i++) {
+			load.get(i).setLoadtons(load.get(i).getLoad()/1000.0);
+		}
+		
 		return this.loadRepository.saveAll(load);
 	}
 	
